@@ -26,8 +26,8 @@ exports.register = function (server, options, next) {
 };
 
 internals.after = function (server, next) {
-	for (const entity in server.plugins.dogwater) {
-		if (server.plugins.dogwater.hasOwnProperty(entity)) {
+	for (const entity in server.plugins.dogwater.collections) {
+		if (server.plugins.dogwater.collections.hasOwnProperty(entity)) {
 			let current;
 			if (internals[entity]) {
 				current = Hoek.applyToDefaultsWithShallow(internals.defaults, internals[entity], ['actions']);
