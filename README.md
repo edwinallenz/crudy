@@ -17,7 +17,7 @@ This plugin uses **ES6 features** and it works like charm with **iojs > 2.0**. I
 
 	npm install --save crudy
 
-Don't forget that *hapi*, *Dogwater* and *Bedwetter v1.8.2* should be already dependencies of your project, defined in the ```package.json``` file. These are in facts **peer-dependencies**.
+Don't forget that *hapi*, *Dogwater v1.1.x* and *Bedwetter v1.8.x* should be already dependencies of your project, defined in the ```package.json``` file. These are in facts **peer-dependencies**.
 
 ## Usage
 This module can be used as common [Hapi.js](http://hapijs.com/) plug-in, configuring it in the ```plugin``` section of the ```manifest.json``` of your application:

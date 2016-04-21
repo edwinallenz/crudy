@@ -14,7 +14,7 @@
   "license": "ISC",
   "peerDependencies": {
     "hapi": "^8.4.0",
-    "dogwater": "^0.4.6",
+    "dogwater": "^1.1.x",
     "bedwetter": "^1.8.2"
   },
   "devDependencies": {
