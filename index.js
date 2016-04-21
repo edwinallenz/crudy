@@ -4,7 +4,8 @@ const Hoek = require('hoek');
 let internals = {
 	defaults: {
 		config: {
-			handler: {
+      tags:['api'],
+      handler: {
 				bedwetter: {}
 			}
 		},
@@ -29,7 +30,6 @@ internals.after = function (server, next) {
 	for (const entity in server.plugins.dogwater.collections) {
 		if (server.plugins.dogwater.collections.hasOwnProperty(entity)) {
 			let current;
-      current.config.tags = ['api']
 
 			if (internals[entity]) {
 				current = Hoek.applyToDefaultsWithShallow(internals.defaults, internals[entity], ['actions']);
