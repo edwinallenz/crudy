@@ -44,7 +44,7 @@ internals.after = function (server, next) {
               tags:['api']
           },
 		      path,
-	        handler: function(request, reply){ reply({})}
+	        handler: function(request, reply){ reply().statusCode = 204}
 	      });
 
         server.route({
@@ -53,7 +53,7 @@ internals.after = function (server, next) {
                 tags:['api']
             },
          	  path: `${path}/{id}`,
-            handler: function(request, reply){ reply({})}
+	          handler: function(request, reply){ reply().statusCode = 204}
         });
 
 
