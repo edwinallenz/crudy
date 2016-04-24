@@ -37,7 +37,6 @@ internals.after = function (server, next) {
 				current = internals.defaults;
 			}
 			const path = `${current.config.handler.bedwetter.prefix || ''}/${entity}`;
-
       current.config.description = `Options route for ${entity}`;
     	  server.route({
 		      method: 'OPTIONS',
@@ -47,6 +46,16 @@ internals.after = function (server, next) {
 		      path,
 	        handler: function(request, reply){ reply({})}
 	      });
+
+        server.route({
+            method: 'OPTIONS',
+            config:{
+                tags:['api']
+            },
+         	  path: `${path}/{id}`,
+            handler: function(request, reply){ reply({})}
+        });
+
 
 			if (current.actions.find) {
 				current.config.description = `Find all ${entity} entries`;
@@ -63,6 +72,7 @@ internals.after = function (server, next) {
 					path: `${path}/{id}`,
 					config: current.config
 				});
+
 			}
 			if (current.actions.create) {
 				current.config.description = `Create a new ${entity}`;
