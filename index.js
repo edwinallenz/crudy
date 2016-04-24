@@ -38,24 +38,6 @@ internals.after = function (server, next) {
 			}
 			const path = `${current.config.handler.bedwetter.prefix || ''}/${entity}`;
       current.config.description = `Options route for ${entity}`;
-    	  server.route({
-		      method: 'OPTIONS',
-          config:{
-              tags:['api']
-          },
-		      path,
-	        handler: function(request, reply){ reply().statusCode = 204}
-	      });
-
-        server.route({
-            method: 'OPTIONS',
-            config:{
-                tags:['api']
-            },
-         	  path: `${path}/{id}`,
-	          handler: function(request, reply){ reply().statusCode = 204}
-        });
-
 
 			if (current.actions.find) {
 				current.config.description = `Find all ${entity} entries`;
